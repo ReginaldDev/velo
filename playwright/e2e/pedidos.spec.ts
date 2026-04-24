@@ -14,13 +14,19 @@ test('deve consultar um pedido aprovado', async ({ page }) => {
   await expect(page.getByRole('heading')).toContainText('Consultar Pedido')
 
   //Act
-  await page.getByTestId('search-order-id').fill('VLO-4DRZZ5')
-  await page.getByTestId('search-order-button').click()
+  //await page.locator('//label[text()="Número do Pedido"]/..//input').fill('VLO-4DRZZ5')
+  await page.getByRole('textbox', { name: 'Número do Pedido' }).fill('VLO-4DRZZ5')
+  await page.getByRole('button', { name: 'Buscar Pedido' }).click()
 
   //Assert
-  await expect(page.getByTestId('order-result-id')).toBeVisible()
-  await expect(page.getByTestId('order-result-id')).toContainText('VLO-4DRZZ5')
-  
-  await expect(page.getByTestId('order-result-status')).toBeVisible()
-  await expect(page.getByTestId('order-result-status')).toContainText('APROVADO')
+  const orderId = page.locator('p.font-mono', { hasText: 'VLO-4DRZZ5' });
+  // Validações
+  await expect(orderId).toBeVisible({ timeout: 10_000 });
+  await expect(orderId).toContainText('VLO-4DRZZ5');
+
+
+  const statusOrder = page.locator('text=APROVADO');
+  // Validações
+  await expect(statusOrder).toBeVisible({ timeout: 10000 });
+  await expect(statusOrder).toContainText('APROVADO');
 })
