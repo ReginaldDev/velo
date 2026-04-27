@@ -19,7 +19,7 @@ const Header = () => {
           {/* Desktop Navigation - aligned right */}
           <nav className="hidden md:flex items-center gap-8 ml-auto" data-testid="header-nav">
             <Link to="/lookup" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-              Consultar Pedidos
+              Consultar Pedido
             </Link>
             <Button asChild data-testid="header-cta">
               <Link to="/configure">Configure o Seu</Link>
