@@ -115,7 +115,7 @@ test.describe('Consulta de Pedido', () => {
     await expect(page.getByTestId(`order-result-${order.number}`)).toMatchAriaSnapshot(`
       - img
       - paragraph: Pedido
-      - paragraph: ${order}
+      - paragraph: ${order.number}
       - img
       - text: ${order.status}
       - img "Velô Sprint"
