@@ -142,6 +142,66 @@ test.describe('Consulta de Pedido', () => {
       `);
   })
 
+  test('deve consultar um pedido em analise', async ({ page }) => {
+
+    //Test Data
+    //const order = 'VLO-QD53F3'
+    const order = {
+      number: 'VLO-2MCJIU',
+      status: 'EM_ANALISE',
+      color: 'Lunar White',
+      wheels: 'aero Wheels',
+      customer: {
+        name: 'João da Silva',
+        email: 'joao@velo.com.br'
+      },
+      payment: 'À Vista'
+
+    }
+    //Act
+    //await page.locator('//label[text()="Número do Pedido"]/..//input').fill('VLO-4DRZZ5')
+    await page.getByRole('textbox', { name: 'Número do Pedido' }).fill(order.number)
+    await page.getByRole('button', { name: 'Buscar Pedido' }).click()
+
+    //Assert
+    // //const orderId = page.locator('//p[text()="Pedido"]/..//p[text()="VLO-4DRZZ5"]')
+    // const orderId = page.getByRole('paragraph')
+    //   .filter({ hasText: /^Pedido$/ })
+    //   .locator('..') //pega o elemento pai do pedido
+    // // Validações
+    // await expect(orderId).toBeVisible({ timeout: 10000 })
+    // await expect(orderId).toContainText(order)
+
+    await expect(page.getByTestId(`order-result-${order.number}`)).toMatchAriaSnapshot(`
+      - img
+      - paragraph: Pedido
+      - paragraph: ${order.number}
+      - img
+      - text: ${order.status}
+      - img "Velô Sprint"
+      - paragraph: Modelo
+      - paragraph: Velô Sprint
+      - paragraph: Cor
+      - paragraph: ${order.color}
+      - paragraph: Interior
+      - paragraph: cream
+      - paragraph: Rodas
+      - paragraph: ${order.wheels}
+      - heading "Dados do Cliente" [level=4]
+      - paragraph: Nome
+      - paragraph: ${order.customer.name}
+      - paragraph: Email
+      - paragraph: ${order.customer.email}
+      - paragraph: Loja de Retirada
+      - paragraph
+      - paragraph: Data do Pedido
+      - paragraph: /\\d+\\/\\d+\\/\\d+/
+      - heading "Pagamento" [level=4]
+      - paragraph: ${order.payment}
+      - paragraph: /R\\$ \\d+\\.\\d+,\\d+/
+      `);
+  })
+
   test('deve exibir mensagem quando o pedido não é encontrado', async ({ page }) => {
 
     //Test Data
