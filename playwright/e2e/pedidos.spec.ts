@@ -32,7 +32,7 @@ test.describe('Consulta de Pedido', () => {
       },
       payment: 'À Vista'
 
-    }
+    } as const
 
     // Act  
     const orderLockupPage = new OrderLockupPage(page)
@@ -89,7 +89,7 @@ test.describe('Consulta de Pedido', () => {
       },
       payment: 'À Vista'
 
-    }
+    } as const
 
     // Act  
     const orderLockupPage = new OrderLockupPage(page)
@@ -145,7 +145,7 @@ test.describe('Consulta de Pedido', () => {
       },
       payment: 'À Vista'
 
-    }
+    } as const
 
     // Act  
     const orderLockupPage = new OrderLockupPage(page)
