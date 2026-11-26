@@ -1,3 +1,4 @@
+import { toOrderDetails } from '../support/database'
 import { expect, test } from '../support/fixtures'
 import { generateOrderCode } from '../support/helpers'
 
@@ -6,61 +7,45 @@ test.describe('Consulta de Pedido', () => {
     await app.orderLookup.open()
   })
 
-  test('deve consultar um pedido aprovado', async ({ app }) => {
-
-    const order = {
-      number: 'VLO-4DRZZ5',
-      status: 'APROVADO',
-      color: 'Midnight Black',
-      wheels: 'sport Wheels',
-      customer: {
-        name: 'Reginaldo Teste',
-        email: 'bug@teste.dev'
-      },
-      payment: 'À Vista'
-
-    } as const
-
-    await app.orderLookup.searchOrder(order.number)
-    await app.orderLookup.validateOrderDetails(order)
-    await app.orderLookup.validateStatusBadge(order.status)
-
-  })
-
-  test('deve consultar um pedido reprovado', async ({ app }) => {
-
-    const order = {
-      number: 'VLO-QD53F3',
-      status: 'REPROVADO',
-      color: 'Midnight Black',
-      wheels: 'sport Wheels',
-      customer: {
-        name: 'Steve Jobs',
-        email: 'jobs@apple.com'
-      },
-      payment: 'À Vista'
-
-    } as const
+  test('deve consultar um pedido aprovado', async ({ app, ordersDb }) => {
+    const insertedOrder = await ordersDb.insertApprovedOrder({
+      color: 'midnight-black',
+      wheel_type: 'sport',
+      customer_name: 'Reginaldo Teste',
+      customer_email: 'bug@testea.dev',
+      payment_method: 'avista',
+    })
+    const order = toOrderDetails(insertedOrder)
 
     await app.orderLookup.searchOrder(order.number)
     await app.orderLookup.validateOrderDetails(order)
     await app.orderLookup.validateStatusBadge(order.status)
   })
 
-  test('deve consultar um pedido em analise', async ({ app }) => {
+  test('deve consultar um pedido reprovado', async ({ app, ordersDb }) => {
+    const insertedOrder = await ordersDb.insertRejectedOrder({
+      color: 'midnight-black',
+      wheel_type: 'sport',
+      customer_name: 'Steve Jobs',
+      customer_email: 'jobs@apple.com',
+      payment_method: 'avista',
+    })
+    const order = toOrderDetails(insertedOrder)
 
-    const order = {
-      number: 'VLO-2MCJIU',
-      status: 'EM_ANALISE',
-      color: 'Lunar White',
-      wheels: 'aero Wheels',
-      customer: {
-        name: 'João da Silva',
-        email: 'joao@velo.com.br'
-      },
-      payment: 'À Vista'
+    await app.orderLookup.searchOrder(order.number)
+    await app.orderLookup.validateOrderDetails(order)
+    await app.orderLookup.validateStatusBadge(order.status)
+  })
 
-    } as const
+  test('deve consultar um pedido em analise', async ({ app, ordersDb }) => {
+    const insertedOrder = await ordersDb.insertInAnalysisOrder({
+      color: 'lunar-white',
+      wheel_type: 'aero',
+      customer_name: 'João da Silva',
+      customer_email: 'joao@velo.com.br',
+      payment_method: 'avista',
+    })
+    const order = toOrderDetails(insertedOrder)
 
     await app.orderLookup.searchOrder(order.number)
     await app.orderLookup.validateOrderDetails(order)
@@ -71,7 +56,6 @@ test.describe('Consulta de Pedido', () => {
     const order = generateOrderCode()
     await app.orderLookup.searchOrder(order)
     await app.orderLookup.validateOrderNotFound()
-
   })
 
   test('deve exibir mensagem quando o pedido em qualquer formato não é encontrado', async ({ app }) => {
@@ -79,7 +63,7 @@ test.describe('Consulta de Pedido', () => {
     await app.orderLookup.validateOrderNotFound()
   })
 
-  test('deve manter o botão desabilitado com campo vazio ou apenas espacos', async ({ app, page }) => {
+  test('deve manter o botão desabilitado com campo vazio ou apenas espacos', async ({ app }) => {
     const button = app.orderLookup.elements.searchButton
     await expect(button).toBeDisabled()
     await app.orderLookup.elements.orderInput.fill('   ')
