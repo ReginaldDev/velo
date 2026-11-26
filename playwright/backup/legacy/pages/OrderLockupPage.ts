@@ -1,14 +1,8 @@
-import { Page } from "@playwright/test"
+import { Page, expect } from "@playwright/test"
 
 export class OrderLockupPage {
     constructor(private page: Page) { }
 
-<<<<<<< Updated upstream
-    async searchOrder(numero: string) {
-        await this.page.getByRole('textbox', { name: 'Número do Pedido' }).fill(numero)
-        await this.page.getByRole('button', { name: 'Buscar Pedido' }).click()
-    }
-=======
     async validatePageLoaded() {
         await expect(this.page.getByRole('heading')).toContainText('Consultar Pedido')
     }
@@ -66,5 +60,4 @@ export class OrderLockupPage {
             - paragraph: Verifique o número do pedido e tente novamente
             `)
     }
->>>>>>> Stashed changes
 }

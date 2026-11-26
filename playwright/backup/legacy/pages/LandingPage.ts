@@ -8,5 +8,4 @@ export class LandingPage {
         const title = this.page.getByTestId('hero-section').getByRole('heading')
         await expect(title).toContainText('Velô Sprint')
     }
-
 }
