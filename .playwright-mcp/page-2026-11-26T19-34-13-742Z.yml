@@ -1,0 +1,157 @@
+- generic [ref=f2e2]:
+  - region "Notifications (F8)":
+    - list
+  - region "Notifications alt+T"
+  - generic [ref=f2e3]:
+    - banner [ref=f2e4]:
+      - generic [ref=f2e6]:
+        - link [ref=f2e7] [cursor=pointer]:
+          - /url: /
+          - img "Velô" [ref=f2e8]
+        - navigation [ref=f2e9]:
+          - link "Consultar Pedido" [ref=f2e10] [cursor=pointer]:
+            - /url: /lookup
+          - link "Configure o Seu" [ref=f2e11] [cursor=pointer]:
+            - /url: /configure
+    - main [ref=f2e12]:
+      - generic [ref=f2e17]:
+        - generic [ref=f2e18]: Novo Modelo 2026
+        - heading "Velô Sprint" [level=1] [ref=f2e22]
+        - paragraph [ref=f2e23]: Performance redefinida. Design que inspira. Configure seu Velô Sprint e experimente o futuro da mobilidade elétrica.
+        - link "Configure Agora" [ref=f2e25] [cursor=pointer]:
+          - /url: /configure
+        - generic [ref=f2e26]:
+          - generic [ref=f2e27]:
+            - paragraph [ref=f2e28]: "450"
+            - paragraph [ref=f2e29]: km de autonomia
+          - generic [ref=f2e30]:
+            - paragraph [ref=f2e31]: 3.2s
+            - paragraph [ref=f2e32]: 0-100 km/h
+          - generic [ref=f2e33]:
+            - paragraph [ref=f2e34]: "500"
+            - paragraph [ref=f2e35]: cv de potência
+      - generic [ref=f2e37]:
+        - generic [ref=f2e38]:
+          - heading "Especificações Técnicas" [level=2] [ref=f2e39]
+          - paragraph [ref=f2e40]: O Velô Sprint combina tecnologia de ponta com design sofisticado para entregar uma experiência de condução incomparável.
+        - generic [ref=f2e41]:
+          - generic [ref=f2e42]:
+            - heading "Bateria" [level=3] [ref=f2e46]
+            - paragraph [ref=f2e47]: 100 kWh
+            - paragraph [ref=f2e48]: Bateria de alta densidade com tecnologia de última geração
+          - generic [ref=f2e49]:
+            - heading "Velocidade Máxima" [level=3] [ref=f2e54]
+            - paragraph [ref=f2e55]: 250 km/h
+            - paragraph [ref=f2e56]: Performance limitada eletronicamente para sua segurança
+          - generic [ref=f2e57]:
+            - heading "Carregamento Rápido" [level=3] [ref=f2e61]
+            - paragraph [ref=f2e62]: 40 min
+            - paragraph [ref=f2e63]: De 10% a 80% em carregadores de 350kW
+          - generic [ref=f2e64]:
+            - heading "Segurança" [level=3] [ref=f2e68]
+            - paragraph [ref=f2e69]: 5 Estrelas
+            - paragraph [ref=f2e70]: Classificação máxima no Latin NCAP
+          - generic [ref=f2e71]:
+            - heading "Tecnologia" [level=3] [ref=f2e76]
+            - paragraph [ref=f2e77]: VelôOS 3.0
+            - paragraph [ref=f2e78]: Sistema operacional com atualizações OTA
+          - generic [ref=f2e79]:
+            - heading "Aerodinâmica" [level=3] [ref=f2e85]
+            - paragraph [ref=f2e86]: Cx 0.21
+            - paragraph [ref=f2e87]: Coeficiente de arrasto líder da categoria
+        - generic [ref=f2e89]:
+          - generic [ref=f2e90]:
+            - paragraph [ref=f2e91]: 450 km
+            - paragraph [ref=f2e92]: Autonomia WLTP
+          - generic [ref=f2e93]:
+            - paragraph [ref=f2e94]: AWD
+            - paragraph [ref=f2e95]: Tração Integral
+          - generic [ref=f2e96]:
+            - paragraph [ref=f2e97]: 760 Nm
+            - paragraph [ref=f2e98]: Torque Máximo
+          - generic [ref=f2e99]:
+            - paragraph [ref=f2e100]: 2.100 kg
+            - paragraph [ref=f2e101]: Peso Total
+      - generic [ref=f2e104]:
+        - img "Velô Sprint Midnight Black" [ref=f2e106]
+        - generic [ref=f2e107]:
+          - heading "Pronto para o Futuro?" [level=2] [ref=f2e108]
+          - paragraph [ref=f2e109]: Configure seu Velô Sprint do seu jeito. Escolha cores, interiores e rodas para criar o veículo perfeito para você.
+          - generic [ref=f2e110]:
+            - generic [ref=f2e111]: A partir de
+            - generic [ref=f2e112]: R$ 40.000
+          - link "Monte o Seu Agora" [ref=f2e113] [cursor=pointer]:
+            - /url: /configure
+      - generic [ref=f2e115]:
+        - generic [ref=f2e116]:
+          - heading "Perguntas Frequentes" [level=2] [ref=f2e117]
+          - paragraph [ref=f2e118]: Tire suas dúvidas sobre o Velô Sprint e descubra por que ele é a escolha certa para você.
+        - generic [ref=f2e120]:
+          - heading [level=3] [ref=f2e122]:
+            - button "Qual é a autonomia real do Velô Sprint?" [ref=f2e123] [cursor=pointer]
+          - heading [level=3] [ref=f2e127]:
+            - button "Quanto tempo leva para carregar completamente?" [ref=f2e128] [cursor=pointer]
+          - heading [level=3] [ref=f2e132]:
+            - button "O Velô Sprint possui garantia?" [ref=f2e133] [cursor=pointer]
+          - heading [level=3] [ref=f2e137]:
+            - button "Posso fazer test-drive antes de comprar?" [ref=f2e138] [cursor=pointer]
+          - heading [level=3] [ref=f2e142]:
+            - button "Quais são as opções de financiamento?" [ref=f2e143] [cursor=pointer]
+          - heading [level=3] [ref=f2e147]:
+            - button "Como funciona a manutenção de um veículo elétrico?" [ref=f2e148] [cursor=pointer]
+    - contentinfo [ref=f2e151]:
+      - generic [ref=f2e152]:
+        - generic [ref=f2e153]:
+          - generic [ref=f2e154]:
+            - img "Velô" [ref=f2e155]
+            - paragraph [ref=f2e156]: Redefinindo a mobilidade elétrica com design, performance e tecnologia de ponta.
+            - generic [ref=f2e157]:
+              - link "Instagram" [ref=f2e158] [cursor=pointer]:
+                - /url: "#"
+              - link "Facebook" [ref=f2e162] [cursor=pointer]:
+                - /url: "#"
+              - link "Youtube" [ref=f2e165] [cursor=pointer]:
+                - /url: "#"
+              - link "LinkedIn" [ref=f2e169] [cursor=pointer]:
+                - /url: "#"
+          - generic [ref=f2e174]:
+            - heading "Modelos" [level=4] [ref=f2e175]
+            - list [ref=f2e176]:
+              - listitem [ref=f2e177]:
+                - link "Velô Sprint" [ref=f2e178] [cursor=pointer]:
+                  - /url: /configure
+              - listitem [ref=f2e179]: Velô Touring (Em breve)
+              - listitem [ref=f2e180]: Velô Urban (Em breve)
+          - generic [ref=f2e181]:
+            - heading "Suporte" [level=4] [ref=f2e182]
+            - list [ref=f2e183]:
+              - listitem [ref=f2e184]:
+                - link "FAQ" [ref=f2e185] [cursor=pointer]:
+                  - /url: "#faq"
+              - listitem [ref=f2e186]:
+                - link "Contato" [ref=f2e187] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f2e188]:
+                - link "Assistência 24h" [ref=f2e189] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=f2e190]:
+                - link "Rede de Carregadores" [ref=f2e191] [cursor=pointer]:
+                  - /url: "#"
+          - generic [ref=f2e192]:
+            - heading "Legal" [level=4] [ref=f2e193]
+            - list [ref=f2e194]:
+              - listitem [ref=f2e195]:
+                - link "Termos de Uso" [ref=f2e196] [cursor=pointer]:
+                  - /url: /termos
+              - listitem [ref=f2e197]:
+                - link "Política de Privacidade" [ref=f2e198] [cursor=pointer]:
+                  - /url: /privacidade
+              - listitem [ref=f2e199]:
+                - link "Cookies" [ref=f2e200] [cursor=pointer]:
+                  - /url: "#"
+        - generic [ref=f2e201]:
+          - paragraph [ref=f2e202]: © 2025 Velô Motors. Todos os direitos reservados.
+          - paragraph [ref=f2e203]:
+            - text: Feito com ❤️ e muito ☕️ por
+            - link "Papito" [ref=f2e204] [cursor=pointer]:
+              - /url: https://fernandopapito.com

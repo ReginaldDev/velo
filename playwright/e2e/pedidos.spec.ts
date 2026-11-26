@@ -20,7 +20,7 @@ test.describe('Consulta de Pedido', () => {
       payment: 'À Vista'
 
     } as const
- 
+
     await app.orderLookup.searchOrder(order.number)
     await app.orderLookup.validateOrderDetails(order)
     await app.orderLookup.validateStatusBadge(order.status)
@@ -61,7 +61,7 @@ test.describe('Consulta de Pedido', () => {
       payment: 'À Vista'
 
     } as const
- 
+
     await app.orderLookup.searchOrder(order.number)
     await app.orderLookup.validateOrderDetails(order)
     await app.orderLookup.validateStatusBadge(order.status)
@@ -84,5 +84,5 @@ test.describe('Consulta de Pedido', () => {
     await expect(button).toBeDisabled()
     await app.orderLookup.elements.orderInput.fill('   ')
     await expect(button).toBeDisabled()
-  })   
+  })
 })
