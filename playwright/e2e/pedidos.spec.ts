@@ -1,4 +1,4 @@
-import { test } from '../support/fixtures'
+import { expect, test } from '../support/fixtures'
 import { generateOrderCode } from '../support/helpers'
 
 test.describe('Consulta de Pedido', () => {
@@ -78,4 +78,11 @@ test.describe('Consulta de Pedido', () => {
     await app.orderLookup.searchOrder('ABC123')
     await app.orderLookup.validateOrderNotFound()
   })
+
+  test('deve manter o botão desabilitado com campo vazio ou apenas espacos', async ({ app, page }) => {
+    const button = app.orderLookup.elements.searchButton
+    await expect(button).toBeDisabled()
+    await app.orderLookup.elements.orderInput.fill('   ')
+    await expect(button).toBeDisabled()
+  })   
 })
